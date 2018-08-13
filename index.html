@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css.css"/>
+		<link rel="stylesheet" href="pagination.css">
+	</head>
+	<body>
+		<div class="head">
+			<img src="img/kuz.jpg">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">发现</a></li>
+				<li><a href="#">同城</a></li>
+				<li><a href="#">职位</a></li>
+				<li><a href="#">活动</a></li>
+				<li><a href="#">正版素材</a></li>
+				<li><a href="#">课程</a></li>
+				<li><a href="#"><img class="dian" src="img/snadian.jpg" /></a></li>
+			</ul>
+			
+			<img class="jing" src="img/serch.jpg" />
+			<img class="yun" src="img/yun.jpg"/>
+			<p>
+			<a href="#">登陆</a>
+			<a href="#">注册</a>
+		</p>
+		</div>
+		<div class="banner">
+			<ul>
+				<li><img src="https://img.zcool.cn/community/01e4555b6a90d6a801206a353dd5bf.jpg@1380w"></li>
+				<li><img src="https://img.zcool.cn/community/01a59b5b6a4e29a801206a35690359.jpg@1380w"></li>
+				<li><img src="https://img.zcool.cn/community/0196cb5b69a0bba801206a355b59c4.png@1380w"></li>
+				<li><img src="https://img.zcool.cn/community/01bf015b69a0f7a801215c8fde22de.png@1380w"></li>
+				<li><img src="https://img.zcool.cn/community/018a595b69a0cfa801215c8f4cebe9.png@1380w"></li>
+			</ul>	
+			<button id="left_btn"><</button>
+			<button id="right_btn">></button>
+		</div>
+		<header>
+			<p><a href="#"><img src="http://afp.alicdn.com/afp-creative/creative/u114914251/b87adbc52dd5de7b591b7d521a2960ff.jpg"></a> </p>
+			<p><a href="#"><img src="http://afp.alicdn.com/afp-creative/creative/u114914251/6a80ee9801bea0a6a22ba0f04354a458.jpeg"></a> </p>
+			<p><a href="#"><img src="http://afp.alicdn.com/afp-creative/creative/u114914251/8cb883a7fb85c76935a1aa8c27a80142.jpg"></a> </p>
+			<p><a href="#"><img src="http://afp.alicdn.com/afp-creative/creative/u114914251/d22214fd331fc1f564c3e415ce9c98af.jpg"></a> </p>
+			<p><a href="#"><img src="http://afp.alicdn.com/afp-creative/creative/u114914251/010f6066bf5d3a77ac142bcccf2a0e90.jpg"></a> </p>
+		</header>
+		<div class="big-nav">
+			<div class="nav">
+				<p><a href="#">首页推荐</a></p>
+				<p><a href="#">最新发布</a></p>
+				<p><a href="#">上升最快</a></p>
+			</div>
+		</div>
+		<div class="color">
+			<div class="container">
+		        <ul>
+		             
+		        </ul>
+	    </div>
+    </div>
+    <div class="pagination"></div>
+    <footer>
+			<div class="top_footer">
+				<ul>
+					<li><img src="img/iphone.jpg"><a href="#">手机版</a></li>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">加入站酷</a></li>
+					<li><a href="#">用户协议</a></li>
+					<li><a href="#">企业服务</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li><a href="#">联系我们</a></li>
+					<li><a href="#">中文</a></li>
+					<li><a href="#">English</a></li>
+				</ul>
+				<p>
+					<img src="img/weixin.jpg">
+					<img src="img/weibo.jpg">
+				</p>
+			</div>
+			<div class="botton_footer">
+				<p>
+					<span>京ICP备11017824号-4</span>
+					<span>京ICP备130164号</span>
+					<span><img src="img/国徽.jpg">京公网安备110502000501号</span>
+					<span>网络经营许可证 京网文[2016]6173-844号</span>
+					<span>广播电视节目制作经营许可证（京）字第06990号</span>
+				</p>
+				<p>
+					<span>网上有害信息举报专区&nbsp;</span>
+					<span>不良信息举报电话：010-56538658</span>
+					<span>举报邮箱 jubao@zcool.com.cn</span>
+					<span>联系电话 010-56538600</span>
+					<a>Copyright &copy;" 2006-2018 ZCOOL站酷</a>
+				</p>
+			</div>
+		</footer>
+		<a  class="return_top" href="#">&and;</a>
+	</body>
+</html>
+<script src="move.js"></script>
+<script src="jquery.js"></script>
+<script src="jquery.pagination.js"></script>
+<script src="myjquery.js"></script>
+<script>
+	//轮播图
+		var left_btn=document.querySelector("#left_btn");
+		var right_btn=document.querySelector("#right_btn");
+		var oLi=document.querySelectorAll(".banner ul li");
+		var oUl=document.querySelector(".banner ul");
+		var banner_index=0;
+		right_btn.onclick=function(){
+			if(banner_index == oLi.length-1){
+				banner_index=1;
+				oUl.style.left = 0;
+			}else{
+				banner_index++;
+			}
+			for(var i=0;i<oLi.length;i++){
+				oLi[i].className=" ";
+			}
+			move(oUl,-1150 * banner_index , "left")
+		}
+		left_btn.onclick=function(){
+			if(banner_index == 0){
+				banner_index=oLi.length-2;
+				oUl.style.left =- 4600+"px" ;
+			}else{
+				banner_index--;
+			}
+			for(var i=0;i<oLi.length;i++){
+				oLi[i].className=" ";
+			}
+			move(oUl,-1150 * banner_index , "left")
+		}
+		setInterval(right_btn.onclick,5000);
+		
+		$(function(){
+            var pag = $.pag();
+            new pag().init();
+        })
+	//回到顶部
+	var rt_top=document.querySelector(".return_top");
+	document.onscroll=function(){
+	var scrollTop=document.documentElement.scrollTop || document.body.scrollTop;
+	if(scrollTop >800){
+		rt_top.style.display="block";
+	}else{
+		rt_top.style.display="none";
+	}
+	if(scrollTop >3050){
+	rt_top.style.position="none"
+	}else{
+		rt_top.style.bottom=50+"px"
+	}
+}
+//nav定位    没弄明白。
+//	$(function(){
+//		$(window).on("scroll",function(){
+//			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+//			if(scrollTop >= $(".big-nav").offset().top){
+////			console.log(1);
+//				$(".nav").css({
+//					position:"fixed",
+//					background:"#ffffff",
+//					top:"0",
+//					zIndex:999
+//				})
+//			}else{
+//				$(".nav").css({
+//					position:"static"
+//				})
+//			}
+//		})
+//	})
+</script>
